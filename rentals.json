@@ -23,5 +23,12 @@
     "message": "Yo, there's super deals!"
   }, {
     "message": "Yo, there's fantastic deals!"
-  }]
+  }],
+  "cities": [{
+   "name": "Portland",
+   "country": "USA"
+   }, {
+     "name": "Seattle",
+     "country": "USA"
+   }]
 }
