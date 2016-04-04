@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       cities: this.store.findAll('city'),
       rentals: this.store.findAll('rental')
-    })
+    });
     // return this.store.findAll('announcement');
      //step 2: -this.store.findAll('rental') here we modify the route to find method.  we specify this.store to refer to the Firebase data store that we set up.  Then we run the findAll method with the argument rental; this instructs Ember Data to find all records fo the type rental in the store and return the to our application.  step 1: -return rentals- a method within an Ember class is called a hook.  Here is a model hook added to our index route handler.  the hook returns an array of hard coded property rentals
   },
@@ -29,6 +29,10 @@ export default Ember.Route.extend({
     },
     destroyRental(rental) {
       rental.destroyRecord();
+      this.transitionTo('index');
+    },
+    destroyCity(city) {
+      city.destroyRecord();
       this.transitionTo('index');
     },
     saveCity(params) {
