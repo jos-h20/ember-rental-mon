@@ -8,6 +8,30 @@ available by arrangement through {{rental.owner}}.
 <p>Renting on Super Rentals since: {{format-time rental.date_added}}</p>
 
 <div>
-  <h3>Map of {{rental.owner}}'s {{rental.type}}</h3>
-  {{google-map rental=rental}}
+  <!-- <h3>Map of {{rental.owner}}'s {{rental.type}}</h3>
+  {{google-map rental=rental}} -->
 </div>
+{{#g-map lat=37.7833 lng=-122.4167 zoom=12 as |context|}}
+
+  {{#g-map-marker context group="cats" lat=37.7833 lng=-122.4167 as |markerContext|}}
+    {{#g-map-infowindow markerContext}}
+      <h2>Trailhead #1</h2>
+    {{/g-map-infowindow}}
+  {{/g-map-marker}}
+  {{#g-map-marker context group="cats" lat=37.7433 lng=-122.4467 as |markerContext|}}
+    {{#g-map-infowindow markerContext}}
+      <h2>Trailhead #2</h2>
+    {{/g-map-infowindow}}
+  {{/g-map-marker}}
+
+  {{#g-map-marker context group="dogs" lat=37.7533 lng=-122.4167 as |markerContext|}}
+    {{#g-map-infowindow markerContext}}
+      <h2>Trailhead #1</h2>
+    {{/g-map-infowindow}}
+  {{/g-map-marker}}
+  {{#g-map-marker context group="dogs" lat=37.7733 lng=-122.4467 as |markerContext|}}
+    {{#g-map-infowindow markerContext}}
+      <h2>Trailhead #2</h2>
+    {{/g-map-infowindow}}
+  {{/g-map-marker}}
+{{/g-map}}

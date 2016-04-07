@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'super-rentals',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://ep-rentals.firebaseio.com/', //this is where you put your own firebase link. 
+    firebase: 'https://ep-rentals.firebaseio.com/', //this is where you put your own firebase link.
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -22,6 +22,11 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV['g-map'] = {
+      libraries: ['places', 'geometry'],
+      key: 'AIzaSyAvT6EAqWu-ooOiS8ymMzGTHqfCwkBtKaE',
+      protocol: 'https'
+    }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
