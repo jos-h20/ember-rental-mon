@@ -6,3 +6,8 @@
   color: lightgray;
   height: 300px;
 }
+
+.map-display {
+    height: 600px;
+    width: 600px;
+  }

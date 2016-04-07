@@ -4,3 +4,10 @@ available by arrangement through {{rental.owner}}.
 <p><img src={{rental.image}} alt={{rental.type}}></p>
 
 <button {{action 'delete' rental}}>Delete</button>
+
+<p>Renting on Super Rentals since: {{format-time rental.date_added}}</p>
+
+<div>
+  <h3>Map of {{rental.owner}}'s {{rental.type}}</h3>
+  {{google-map rental=rental}}
+</div>
