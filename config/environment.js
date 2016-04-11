@@ -46,9 +46,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
-  }
+if (environment === 'production') {
+  ENV.baseURL = '/ember-rental-mon/dist';
+  ENV.locationType = 'hash';
+}
 
   return ENV;
 };
