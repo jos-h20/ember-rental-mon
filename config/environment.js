@@ -51,5 +51,6 @@ module.exports = function(environment) {
     ENV.locationType = 'hash';
   }
 
+
   return ENV;
 };
