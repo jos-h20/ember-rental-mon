@@ -47,7 +47,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/ember-rental-mon/dist';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
